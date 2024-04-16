@@ -1,0 +1,7 @@
+scikit-image
+matplotlib
+nibabel
+tk
+Pillow
+scipy
+antspyx
