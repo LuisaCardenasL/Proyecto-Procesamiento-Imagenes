@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageTk
 from ventanas.preprocesamiento import preprocesamiento
 from ventanas.segmentacion_ventana import segmentacion_ventana
 from ventanas.histograma import histograma
+from ventanas.registro import registro
 
 class VentanaInicial(tk.Tk):
 
@@ -37,6 +38,11 @@ class VentanaInicial(tk.Tk):
         self.botonHistograma.config(bg="white")
         self.botonHistograma.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
 
+        self.botonRegistro = Button(self, text="Registro", command=self.VentanaRegistro)    
+        self.botonRegistro.pack()
+        self.botonRegistro.config(bg="white")
+        self.botonRegistro.place(relx=0.5, rely=0.7, anchor=tk.CENTER)
+
         self.geometry(f"{ventana_ancho}x550")  # Ajustar el ancho de la ventana
         self.config(bg="grey")
         self.mainloop()
@@ -49,6 +55,9 @@ class VentanaInicial(tk.Tk):
 
     def VentanaHistograma(self):
         ventana_image = histograma(self)
+    
+    def VentanaRegistro(self):
+        ventana_image = registro(self)
 
 if __name__ == "__main__":
     app = VentanaInicial()
