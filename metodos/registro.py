@@ -14,6 +14,10 @@ class Registro:
             self.registro()
         elif metodo=="Calcular volumen":
             self.calcular_volumen()
+        elif metodo=="Calcular volumenes":
+            self.calcular_volumenes()
+        elif metodo=="Laplacian":
+            self.laplacian()
 
     def registro(imagen_flair, imagen):
         # Carga las imágenes de entrada
@@ -76,3 +80,10 @@ class Registro:
             cluster_volumens[label] = cluster_volumen
         print(cluster_volumens)
         return cluster_volumens
+    
+    def laplacian(image):
+        # Apply Laplacian filter to the image
+        laplacian_image = cv2.Laplacian(image, cv2.CV_64F)
+
+        # Return the resulting image
+        return laplacian_image

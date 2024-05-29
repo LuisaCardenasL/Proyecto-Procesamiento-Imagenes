@@ -71,6 +71,7 @@ class registro(tk.Toplevel):
                                   "Calcular volumen", command=self.seleccionar_registro)
         self.opc1.place(x=730, y=210)
     
+    
     def cargar_imagen(self):
 
         initial_dir = "Resources/images"
